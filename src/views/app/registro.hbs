@@ -1,0 +1,25 @@
+<div class="container py-4">
+    <form action="/app/registro" method="post">
+        <h1>Registro de usuario</h1>
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        <div class="mb-2">
+            <input type="text" placeholder="Nombre(s)" name="nombre" class="form-control">
+        </div>
+        <div class="mb-2">
+            <input type="text" placeholder="Apellidos(s)" name="apellido" class="form-control">
+        </div>
+        <div class="mb-2">
+            <input type="text" placeholder="Correo" name="correo" class="form-control">
+        </div>
+        <div class="mb-2">
+            <input type="text" placeholder="Contraseña" name="password" class="form-control">
+        </div>
+        <div class="mb-2">
+            <input type="text" placeholder="Rol" class="form-control" name="rol">
+        </div>
+        <div class="mb-2">
+            <input type="text" placeholder="Estado" class="form-control" name="estado">
+        </div>
+        <input type="submit" value="Enviar" class="btn btn-primary">
+    </form>
+</div>
