@@ -4,8 +4,8 @@ const { promisify } = require('util');
 const pool = mysql.createPool({
     host: '127.0.0.1',
     user: 'root',
-    password: 'juandavid',
-    database: 'electiva',
+    password: '',
+    database: 'electiva2',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 3

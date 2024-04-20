@@ -10,6 +10,7 @@ const MySQLStore = require('express-mysql-session')(session);
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+require('./helpers/passport');
 // Llamando las librerias necesarias
 
 // Llamar la base de datos
@@ -61,10 +62,13 @@ app.use('/', require('./routes/errores'));
 app.use('/', require('./routes/index'));
 // Rutas
 
-// app.use((req, res, next) => {
-//     app.locals.user = req.user;
-//     next();
-// });
+app.use((req, res, next) => {
+    app.locals.user = req.user;
+    app.locals.vacio = req.flash('vacio');
+    app.locals.error = req.flash('error');
+    app.locals.correcto = req.flash('correcto');
+    next();
+});
 
 // Abajo de las rutas, el error 404
 app.use((req, res) => {

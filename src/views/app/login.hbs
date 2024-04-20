@@ -1,9 +1,11 @@
-<form action="" method="post">
+<form action="/app/login" method="post">
+    <input type="hidden" value="{{csrf}}" name="_csrf">
     <div class="mb-2">
-        <input type="text" placeholder="Usuario" class="form-control">
+        <input type="text" placeholder="Correo" class="form-control" name="correo">
     </div>
     <div class="mb-2">
-        <input type="password" placeholder="Contraseña" class="form-control">
+        <input type="password" placeholder="Contraseña" class="form-control" name="password">
     </div>
+    {{>error}}
     <input type="submit" value="Enviar" class="btn btn-primary">
 </form>
